@@ -54,3 +54,14 @@ def make_repeater(func, n):
         return func
     else:
         return make_repeater(func,k-1)
+    
+    def inverse_Cascade(n):
+        grow(n)               
+        print(n)                 
+        shrink(n)
+    def f_then_g(f,g,n):
+        if (n!=0):         
+            f(n)
+            g(n)
+    grow=lambda n:f_then_g(grow,print,n//10)
+    shrink=lambda n:f_then_g(print,shrink,n//10)
